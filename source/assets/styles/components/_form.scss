@@ -1,0 +1,158 @@
+// *************************************
+//
+//   Form
+//	   
+//
+// *************************************
+
+// 基本架構 //
+
+input,select,textarea {
+	font-size: 1.5em;
+	line-height: 1.5;
+	margin-top: $b-space-s;
+	margin-bottom: $b-space-s;
+}
+
+
+label {
+	font-size: 1.2em;
+	line-height: 1.5;
+	margin-top: $b-space-s;
+	margin-bottom: 0;
+}
+
+select,
+select[multiple],
+select[size],
+textarea,
+input[type="text"],
+input[type="password"],
+input[type="email"] {
+	display: inline-block;
+}
+
+label {
+	display: inline-block;
+	width: 100%;
+	clear: both;
+}
+
+// 版面 //
+
+
+.form .form-inline {
+	label {
+		width: auto;
+		margin-right: $b-space-s;
+	}
+	input,select,textarea,label {
+		display: inline;
+	}
+	label + select ,
+	label + input {
+		margin-top: 0;
+		margin-bottom: 0;
+	}
+}
+
+
+// 細部 //
+
+.form {
+	@extend %clearfix;
+	padding-bottom: $b-space-s;
+	margin-bottom: $b-space-s;
+
+	input[type="text"],	input[type="password"] ,input[type="email"] {
+		width: 100%;
+	}
+
+	/*label*/.input-error {
+		font-size: $b-fontSmall;
+		color: $c-important;
+		margin: 0;
+	}
+	/*label*/.help-text {
+		font-size: $b-fontBase;
+		margin: 0;
+	}
+	
+	.action-text {
+		border: 0;
+		background: transparent;
+		font-size: 16px;
+		color: $c-highlight;
+		text-decoration: underline;
+	}
+
+	.btn-submit {
+		margin-top: $b-space;
+		margin-bottom: $b-space;
+	}
+
+
+}
+
+
+// radio button 
+// 因為行動版預設radio button太小，要重畫
+// ------- 設計邏輯 ------- 
+// 1. 隱藏原本的圈圈
+// 2. 用label的before偽元素設計圈圈
+// 3. 用連接選擇器選取input:checked + label，設計出點下圈圈時的樣式
+// ps：要用label for 和 radio id 綁定才有用
+
+.form {
+	input[type="radio"] {
+    display: none;
+    
+    & + label {
+        display: inline-block;
+        cursor: pointer;
+        
+        /*通常時の見た目*/
+        &::before {
+            width: 24px;
+            height: 24px;
+            display: inline-block;
+            content: "";
+            border-radius: 17px;
+            vertical-align: middle;
+            border: 2px solid #333;
+            background-color: #fff;
+            margin: -2px 5px 0 0;
+        }
+    }
+    /*checked時の見た目*/
+    &:checked + label {
+        color: $c-highlight;
+        cursor: default;
+            
+        &::before {
+            border-color: $c-highlight;
+            background-color: $c-highlight;
+            box-shadow: inset 0 0 0 4px #fff;
+        }
+    }  
+}
+}
+
+
+// MD Style //
+
+.form {
+	input,textarea,select {
+		border-top: 0px;
+		border-right: 0px;
+		border-left: 0px;
+		border-bottom: 1px #666 solid;
+		padding-bottom: 3px;
+		font-size: 1.2em;
+		color: $c-text;
+		&:focus {
+			border-bottom: $c-highlight solid;
+
+		}
+	}
+}

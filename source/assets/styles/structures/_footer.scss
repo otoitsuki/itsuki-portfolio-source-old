@@ -1,0 +1,21 @@
+
+// -------------------------------------
+//   footer
+// -------------------------------------
+
+footer {
+	@extend %tC;
+	background-color: #fff;
+	@include font-size(12px);
+	line-height: 2;
+	.slogan {
+		color: #f3f3f3;
+		display: inline-block;
+		margin-right: 20px;
+	}
+}
+
+address {
+	display: inline-block;
+	font-style: normal;
+}

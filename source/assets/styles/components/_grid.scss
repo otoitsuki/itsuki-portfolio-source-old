@@ -1,0 +1,137 @@
+// *************************************
+//
+//   Layout
+//   -> Config, Grid
+//
+// *************************************
+
+// -------------------------------------
+//   Config
+// -------------------------------------
+
+
+$show-grid-backgrounds: hide; // 選項：show、hide、show-columns、show-baseline
+
+// gutter-position 說明
+// before：推左邊界(margin-left)
+// after ：推右邊界，同susy1(margin-right)
+// split ：左右邊界推gutter的一半，同960grid
+// inside：推欄的左右內距(padding-left、padding-right)
+// inside-static ：用inside會用%來推padding，這則是以單位來推，例：px、em，看你的column-width是用什麼單位
+
+
+
+$susy:(
+    //因為載入到$desktop的Grid，所以根據$desktop規則重新編譯container : (
+  math: fluid,
+  container: 1440px, // container最大寬度。預設auto，依照columns與gutters設定自動算出數值
+  columns: 12, // 預設是四欄
+  gutters: 12px/60px, // 欄位與欄位間的間距，單位是和columns的比例％，預設1/4
+  gutter-position: after , // 每欄之間顯示模式，看上面
+  column-width: false, // 欄位寬度，預設是false（因為都是用比例去算）
+  global-box-sizing: border-box, // 搭配 border-box-sizing mixin 使用，沒開不能用
+  last-flow: to, // gutter-position設定成after或before的話，可能有機會會改到這個設定
+
+  debug: (
+    image: $show-grid-backgrounds,
+  ),
+  use-custom: (
+    background-image: true, // for debugging
+    background-options: false, // for debugging
+    clearfix: false, // 是否要自動抓取compass預設的clearfix的mixin
+  )
+);
+
+// $works:(
+//   gutters: 12px/187px,
+//   columns: 5,
+//   gutter-position: split,
+//   image: $show-grid-backgrounds
+// );
+
+// -------------------------------------
+//   Grid
+// -------------------------------------
+.grid {
+  @include container;
+  @include border-box-sizing;
+  @include prefix(1 of 12);
+  @include suffix(1 of 12);
+  // padding: 0 20px;
+}
+.grid-s {
+  @include container(960px);
+  @include prefix(1 of 12);
+  @include suffix(1 of 12);
+  // padding: 0 20px;
+}
+
+@include susy-media(1px 321px,12){
+  .grid {
+    @include container;
+  }
+  .mod-works {
+    @include gallery(1 of 2);
+  }
+  .column {
+    @include span(100%);
+  }
+  // .skill-list {
+  //   @include container(); 
+  //   .skill-item {
+  //     @include span(1);
+  //     margin-bottom: 83px;
+  //   }
+  // }
+}
+
+@include susy-breakpoint(569px,12){
+  .grid {
+    @include container;
+  }
+  .mod-works {
+    @include gallery(1 of 3);
+  }
+  .column {
+    @include gallery(1 of 2);
+  }
+  // .skill-list {
+  //   @include container(); 
+  //     max-width: 472px; 
+  //     margin-bottom: 0px !important;
+  //   .skill-item {
+  //     @include gallery(1 of 2);
+  //   }
+  // }
+}
+
+@include susy-breakpoint(1110px,12){
+  .grid {
+    @include container;
+  }
+  
+  .mod-works {
+    @include gallery(1 of 4);
+  }
+  
+  .column {
+    @include gallery(1 of 2);
+  }
+
+  // .skill-list {
+  //   @include container();
+  //   max-width: 1002px;
+  //   .skill-item {
+  //     @include gallery(1 of 4);
+  //   }
+  // }
+}
+
+
+// @include with-layout(1140px,$works){
+//     .mod-works{
+//         @include container;
+//         max-width: 1182px;
+//     }
+// }
+

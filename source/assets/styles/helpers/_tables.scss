@@ -1,0 +1,179 @@
+// *************************************
+//
+//   tables 各種table 設計
+//
+// *************************************
+
+
+//-------------------------------------
+// normal-table 標準表格，無thead th
+// from http://weboook.blog22.fc2.com/blog-entry-329.html
+//-------------------------------------
+
+
+
+%normal-table {
+  table-layout:fixed;
+  border-spacing: 0;
+
+  tr:first-child {
+    border-left:1px solid $normal-table-border;
+    border-top: 1px solid $normal-table-border;
+    border-bottom:1px solid $normal-table-border;
+  }
+  tr:last-child {
+    border-radius:0 5px 0 0;
+    border-right:1px solid $normal-table-border;
+    box-shadow: 2px 2px 1px $normal-table-box-shadow,0px 1px 1px rgba(255,255,255,0.3) inset;
+  }
+  tr td {
+    padding: 8px 15px;
+    border-bottom: 1px solid $normal-table-border;
+    border-left: 1px solid $normal-table-border;
+    text-align: center;
+  }
+  tr td:last-child {
+    border-right: 1px solid $normal-table-border;
+    box-shadow: 2px 2px 1px $normal-table-box-shadow;
+  }
+  tr {
+    background: $normal-table-bgc-odd;
+  }
+  tr:nth-child(2n+1) {
+    background: $normal-table-bgc-even;
+  }
+  tr:last-child td {
+    box-shadow: 2px 2px 1px $normal-table-box-shadow;
+  }
+  tr:hover {
+    background: #bbd4ee;
+    cursor:pointer;
+  }
+}
+
+/*-------------------------------------
+  Material Design typography
+  http://codepen.io/zavoloklom/pen/IkaFL
+  -------------------------------------*/
+// %md-table
+// %md-table-condensed
+// %md-table-bordered
+// %md-table-striped 
+
+
+// Tables
+//
+// -----------------
+
+// Baseline styles
+%md-table {
+  width: 100%;
+  max-width: 100%;
+  margin-bottom: 2rem;
+  background-color: $table-bg;
+  border: 1px solid rgba(0,0,0,.32);
+  > thead,
+  > tbody,
+  > tfoot {
+    > tr {
+      > th,
+      > td {
+        text-align: left;
+        padding: $table-cell-padding;
+        vertical-align: top;
+        border-top: 0;
+      }
+    }
+  }
+  > thead > tr > th {
+    font-weight: $table-header-font-weight;
+    color: $table-header-font-color;
+    vertical-align: bottom;
+    border-bottom: 1px solid rgba(0,0,0,.12);
+  }
+  > caption + thead,
+  > colgroup + thead,
+  > thead:first-child {
+    > tr:first-child {
+      > th,
+      > td {
+        border-top: 0;
+      }
+    }
+  }
+  > tbody + tbody {
+    border-top: 1px solid rgba(0,0,0,.12);
+  }
+
+  // Nesting
+  .md-table {
+    background-color: $table-bg;
+  }
+
+  // Remove border
+  .no-border {
+    border: 0;
+  }
+  // Hover effect
+  //
+    > tbody > tr:hover {
+      > td,
+      > th {
+        background-color: $table-bg-hover;
+      }
+    }
+
+}
+
+// Condensed table w/ half padding
+%md-table-condensed {
+  > thead,
+  > tbody,
+  > tfoot {
+    > tr {
+      > th,
+      > td {
+        padding: $table-condensed-cell-padding;
+      }
+    }
+  }
+}
+
+
+// Bordered version
+//
+// Add horizontal borders between columns.
+%md-table-bordered {
+  border: 0;
+  > thead,
+  > tbody,
+  > tfoot {
+    > tr {
+      > th,
+      > td {
+        border: 0;
+        border-bottom: 1px solid $table-border-color;
+      }
+    }
+  }
+  > thead > tr {
+    > th,
+    > td {
+      border-bottom-width: 2px;
+    }
+  }
+}
+
+
+// Zebra-striping
+//
+// Default zebra-stripe styles (alternating gray and transparent backgrounds)
+%md-table-striped {
+  > tbody > tr:nth-child(odd) {
+    > td,
+    > th {
+      background-color: $table-bg-accent;
+    }
+  }
+}
+

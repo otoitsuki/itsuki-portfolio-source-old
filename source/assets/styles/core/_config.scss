@@ -1,0 +1,169 @@
+// *************************************
+//
+//   Settings
+//   -> Fonts, Variables
+//
+// *************************************
+
+// -------------------------------------
+//   Colors
+// -------------------------------------
+
+// ----- Palette ----- //
+
+
+$c-highlight: #2196F3;
+$c-subhighlight: #00ADEF;
+$c-subhighlight-dark: #009dd6;
+$c-subcolor: #F57F17;
+
+// ----- Base ----- //
+
+$c-background-invert: #333333;
+$c-background: #ffffff;
+$c-text-invert: white;
+$c-text: #111111;
+
+$c-link: #0778CD;
+$c-link-hover: darken($c-link, 10);
+$c-link-active: adjust_hue($c-link, 12);
+$c-link-visited: darken($c-link, 20);
+$c-link-focus: $c-link-hover;
+
+$c-selected-font: #fff;
+$c-selected-background: #0086AB;
+
+$c-invalid-background: #f0dddd;
+
+
+// ----- Typography ----- //
+$c-important: #e51c23; //red
+$c-title: #555555;
+
+
+
+
+
+// -------------------------------------
+//   Base
+// -------------------------------------
+
+
+// ----- Borders & Box Shadow ----- //
+
+$b-borderColor: lighten($c-highlight, 30%);
+$b-borderRadius: 3px;
+$b-borderStyle: solid;
+$b-borderWidth: 2px;
+$b-border: $b-borderWidth $b-borderStyle $b-borderColor;
+$b-boxShadow: 0 2px 0 rgba($c-text, 0.25);
+
+
+// ----- Typography ----- //
+
+$b-fontSize: 16px;
+$b-lineHeight: 1.7; // 24.8 / $b-fontSize
+$b-fontFamily-serif: "PMingLiU", serif;
+$b-fontFamily-sans: "Helvetica Neue", Arial, 'Roboto', 'Heiti TC', 'Adobe 繁黑體 Std', 'AdobeFanHeitiStd-Bold', "Source Han Sans TC", "Source Han Sans TC Regular", "Noto Sans CJK TC", "微軟正黑體", "Microsoft JhengHei", sans-serif;
+
+// font-size //
+
+$b-fontSize-xs: 0.75em;
+$b-fontSize-s: 0.813em;
+$b-fontSize-m: 0.938em;
+$b-fontSize-l: 1.25em;
+$b-fontSize-xl: 1.5em;
+// P.s: H1 size = 32px / 2em
+
+// from Google Web StartKit
+
+$b-fontSmall: #{(13/16)}em;
+$b-fontBase: 1em ;
+$b-fontMedium: #{(20/16)}em;
+$b-fontLarge: #{(26/16)}em;
+$b-fontXLarge: #{(42/16)}em;
+$b-fontXXLarge: #{(68/16)}em;
+$b-fontHuge: #{(110/16)}em;
+
+// from Google Material Design
+
+$b-fontButton: #{(14/14)}rem;
+$b-fontMenu: #{(14/14)}rem;
+
+$b-fontCaption: #{(12/14)}rem; // lineheight 1.2
+$b-fontBody: #{(14/14)}rem ;
+$b-fontSubhead: #{(16/14)}rem;
+$b-fontHeadline: #{(24/14)}rem;   // lineheight 48px
+$b-fontDisplay: #{(45/14)}rem;
+
+// Materialize from https://github.com/Dogfalo/materialize/blob/master/sass/components/_variables.scss
+// font-size: 14px
+
+
+$b-fontSize-MD-h1: 4.2rem;
+$b-fontSize-MD-h2: 3.56rem;
+$b-fontSize-MD-h3: 2.92rem;
+$b-fontSize-MD-h4: 2.28rem;
+$b-fontSize-MD-h5: 1.64rem;
+$b-fontSize-MD-h6: 1rem;
+
+// 黃金比例字級 16px, 25.9px, 41.9px, 67.8px
+
+$b-fontSize-Golden-h1: 67.8px;
+$b-fontSize-Golden-h2: 41.9px;
+$b-fontSize-Golden-h3: 25.9px;
+$b-fontSize-Golden-h4: 16px;
+$b-fontSize-Golden-h5: 16px;
+$b-fontSize-Golden-h6: 16px;
+
+// Google Material Design 
+
+$b-fontSize-GMD-h1: #{(34/16)}em;
+$b-fontSize-GMD-h2: #{(24/16)}em;
+$b-fontSize-GMD-h3: #{(20/16)}em;
+$b-fontSize-GMD-h4: #{(16/16)}em;
+$b-fontSize-GMD-h5: #{(14/16)}em;
+$b-fontSize-GMD-h6: #{(12/16)}em;
+
+// ----- Sizing ----- //
+
+// $b-maxWidth: pxtoem(1024px);
+// $b-maxWidth-s: pxtoem(700px);
+$b-space: 16px;
+$b-space-xs: 0.25 * $b-space;
+$b-space-s: 0.5 * $b-space;
+$b-space-l: 2 * $b-space;
+$b-space-xl: 4 * $b-space;
+
+
+
+// -------------------------------------
+//   Helper
+// -------------------------------------
+
+// ----- Table ----- //
+
+// normal
+
+
+$normal-table-bgc-odd: #fff;
+$normal-table-bgc-even: #f1f6fc;
+$normal-table-bgc-hover: #bbd4ee;
+$normal-table-border:  $b-borderColor;
+$normal-table-box-shadow: $b-boxShadow;
+
+// MD
+
+$table-header-font-weight:      bold;
+$table-header-font-color:       #757575;
+
+$table-cell-padding:            $b-space-s;
+$table-condensed-cell-padding:  $table-cell-padding/2;
+
+
+$table-bg:                      #fff;
+$table-bg-accent:               #f5f5f5;
+$table-bg-hover:                rgba(0,0,0,.12);
+$table-bg-active:               $table-bg-hover;
+$table-border-color:            #e0e0e0;
+

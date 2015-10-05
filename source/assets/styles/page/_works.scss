@@ -1,0 +1,33 @@
+// *************************************
+//
+//   works
+//
+// *************************************
+
+.works-data, .works-content {
+	img {
+		border: 1px #aaa solid;
+	}
+}
+
+.works-data {
+	.metadata {
+		@extend %tC;
+		color: #666;
+		font-size: small;
+		margin-top: 24px;
+		margin-bottom: 24px;
+		.time {
+			&:after {
+				content: "◆";
+				padding-left: 8px;
+				padding-right: 8px;
+			}
+		}
+		.tantou {}
+	}
+	.info{
+		margin-top:24px;
+		margin-bottom:36px; 
+	}
+}

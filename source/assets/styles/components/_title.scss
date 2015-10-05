@@ -1,0 +1,54 @@
+// *************************************
+//
+//   Title
+//   
+//
+//
+// *************************************
+
+.title {
+  clear: both;
+  font-family: 'Dosis', sans-serif;
+  font-weight: bold;
+  margin: 0;
+  padding: 0;
+}
+
+// 頁面標題
+.title.title--page {
+	@extend %tC;
+  @include font-size(36px);
+  color: #222;
+	// padding-bottom: 48px;
+}
+// 區塊標題
+.title.title--headline {
+	@extend %tC;
+  @include font-size(36px);
+  color: #222;
+  // margin-top: 48px;
+	padding-bottom: 48px;
+	&:after {
+		content: "";
+		@extend %blockC;
+		background: #0778CD;
+		display: block;
+		height: 4px;
+		width: pxtorem(72px);
+		margin-top: 12px;
+	}
+}
+// 區塊次標題
+.title.title--subtitle {
+  @include font-size(24px);
+  color: #666;
+
+  width: 100%;
+	margin-bottom: 24px;
+}
+// 內文標題
+.title.title--content {
+  @include font-size(18px);
+  line-height: 1.8;
+
+}

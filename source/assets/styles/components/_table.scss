@@ -1,0 +1,27 @@
+// *************************************
+//
+//   Table
+//   參見helper/tables，變數在Config裡
+//
+// *************************************
+
+
+// 要用哪種table呢？
+
+
+.table {
+  @extend %md-table;
+}
+
+// 追加設定
+	.table {
+		border-collapse: separate;
+		.colspan {
+			background-color: #eee;
+			@extend %tC;
+		}
+		td {
+			border-bottom: solid 1px rgba(0,0,0,.12);
+		}
+		
+	}

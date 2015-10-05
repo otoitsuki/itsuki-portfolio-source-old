@@ -1,0 +1,111 @@
+// -------------------------------------
+//   header
+// -------------------------------------
+
+.header {
+	border-top: 8px #0778CD solid;	
+}
+
+.header.header--index {
+
+	background: image-url('bg_header_wf.png') center center;
+	background-size: cover;
+	font-family: 'Raleway', sans-serif;
+	padding-top: 12px;
+	
+	.name {
+		@include font-size(80px);
+		line-height: 1.5;
+	  @extend %tC;
+		font-family: 'Slabo 27px', serif;
+		font-weight: bold;
+		padding-top: 72px;
+		margin: 0;
+	}
+
+	.hitokoto {
+		@extend %tC;
+		margin-bottom: 72px;
+	}
+
+	&:after {
+		content: "";
+		background: linear-gradient(to bottom, rgba(0,0,0,0) 0%,rgba(156,156,156,0) 25%,rgba(208,208,208,1) 100%); /* W3C */		display: block;
+		height: 12px;
+	}
+
+	// .main-nav {
+	//   @extend %tC;
+	//   // @include inline-block-list;
+ //  	margin: 0;
+ //  	padding: 0;
+ //  	@include font-size(18px);
+	// 	a {
+	// 	  @include link-colors(#787878, darken(#787878, 20), adjust_hue(#787878, 12), darken(#787878, 30), darken(#787878, 20));
+	// 		}
+ //  	li {
+ //  		&:after {
+ //  			content: "｜";
+ //  		}
+ //  		&:last-of-type {
+	//   		&:after {
+	//   			content: "";
+	//   		}
+ //  		}
+ //  	}
+	// }
+	// .skill-list {
+	//   @extend %tC;
+ //    @extend %blockC;
+	//   // @include inline-block-list;
+	//   // @include no-bullet;
+ //  	padding: 0;
+	// 	margin-top: 88px;
+	// 	margin-bottom: 83px;
+	// }
+ //  	.skill-item {
+ //  		.skill-img {
+ //  			border: #979797 1px solid;
+ //  			border-radius: 102px;
+ //  		}
+ //  		.skill-name {
+ //  			display: block;
+ //  			@include font-size(24px);
+ //  			margin-top: 24px;
+ //  		}
+
+ //  	}
+}
+
+.header.header--nav {
+	padding-top: 36px;
+}
+
+// header 漢堡選單
+.main-nav {
+	display: none;
+	clear: both;
+	position: relative;
+	ul {
+		display: inline-block;
+		z-index: 1000;
+		right: 0;
+		position: absolute;
+		padding-left: 0;
+		@include bg-rgba(#fff,0.9);
+		border: 1px solid #ccc;
+		li {
+			@include font-size(14px);
+			a {
+				display: block;
+				width: 100%;
+				text-decoration: none;
+				color: #111111;
+				padding: 8px 16px;
+				&:hover {
+					@include bg-rgba(#eee,0.9);
+				}
+			}
+		}
+	}
+}

@@ -1,0 +1,52 @@
+// *************************************
+//
+//   List
+//	   
+//
+// *************************************
+
+// 列表控制項
+
+.list-controller {
+	.product-value {
+		color: $c-important;
+	}
+}
+
+
+// 商品列表（第2.3層考試）
+
+.product-list {
+	margin-top: $b-space;
+	.mod-product {
+		margin-bottom: $b-space-l;
+	}
+	.read-more {
+		width: 100%;
+		padding-top: 12px;
+		padding-bottom: 12px;
+		background-color: $c-highlight;	
+		border: 0px;
+		display: block;
+		font-weight: bold;
+		@include link-colors(#fff);
+		@extend %tC;
+	}
+}
+
+// 購物車列表
+
+.cart-list {
+	.mod-product {
+		border-bottom: 1px solid $c-text;
+		padding-top: $b-space;
+		padding-bottom: $b-space;
+		&:first-of-type {
+			padding-top: 0;
+		}
+		&:last-of-type {
+			border-bottom: 0px;
+			padding-bottom: 0;
+		}
+	}
+}
